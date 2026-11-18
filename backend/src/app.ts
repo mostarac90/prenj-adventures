@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import { errorHandler } from "./middleware/errorHandler.js";
 
 const app = express();
 
@@ -15,5 +16,8 @@ app.get("/api/health", (_req, res) => {
     application: "Prenj Adventures API"
   });
 });
+
+// Must be registered after all routes
+app.use(errorHandler);
 
 export default app;

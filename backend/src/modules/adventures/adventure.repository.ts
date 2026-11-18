@@ -37,5 +37,5 @@ export const getAdventureById = async (id: string) => {
 };
 
 export const getAdventureBySlug = async (slug: string) => {
-  return Adventure.findOne({ slug });
+  return Adventure.findOne({ slug }).where({ isPublished: true }).lean();
 };
