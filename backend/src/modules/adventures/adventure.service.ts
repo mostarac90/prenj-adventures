@@ -18,7 +18,7 @@ import type {
    return adventureRepository.deleteAdventure(id);
  };
 
- export const updateAdventure = async (id: string, updateData: Partial<UpdateAdventureInput>) => {
+ export const updateAdventure = async (id: string, updateData: UpdateAdventureInput) => {
    return adventureRepository.updateAdventure(id, updateData);
  };
 

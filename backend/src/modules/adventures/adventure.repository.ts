@@ -7,6 +7,8 @@ export type CreateAdventureInput = Omit<
   isPublished?: boolean;
 };
 
+export type UpdateAdventureInput = Partial<IAdventure>;
+
 export const createAdventure = async (adventureData: CreateAdventureInput) => {
   return Adventure.create(adventureData);
 };
@@ -21,7 +23,7 @@ export const deleteAdventure = async (id: string) => {
 
 export const updateAdventure = async (
   id: string,
-  updateData: Partial<IAdventure>
+  updateData: UpdateAdventureInput
 ) => {
   return Adventure.findByIdAndUpdate(
     id,
